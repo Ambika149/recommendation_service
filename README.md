@@ -25,7 +25,7 @@ This is a FastAPI-based web application that provides job recommendations based 
 1. Clone the repository:
 
     ```bash
-    git <repo>
+    git clone <repo_url>
     cd <project>
     ```
 

@@ -2,6 +2,7 @@ from logging.config import fileConfig
 from sqlalchemy import create_engine, pool
 from alembic import context
 from app.db.ORM_model import Base
+import os
 
 config = context.config
 
@@ -9,7 +10,7 @@ if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
 target_metadata = Base.metadata
-database_url = "postgresql://admin:1234@localhost/tech_jobs_db"
+database_url = os.environ.get('DB_URI')
 
 
 def run_migrations_offline() -> None:
